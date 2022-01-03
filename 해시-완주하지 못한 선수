@@ -1,13 +1,13 @@
 def solution(participant, completion):
     answer = ''
-    d=dict()
+    num=dict()
     for p in participant:
-        d[p]=d.get(p,0)+1
+        num[p]=num.get(p,0)+1
     for c in completion:
-        d[c]-=1
-        if d[c]==0:
-            del d[c]
-    return list(d.keys()).pop()
+        num[c]-=1
+        if num[c]==0:
+            del num[c]
+    return list(num.keys()).pop()
 
 정확성  테스트
 테스트 1 〉	통과 (0.01ms, 10.2MB)

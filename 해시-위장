@@ -1,11 +1,11 @@
 def solution(clothes):
     answer = 0
-    d=dict(clothes)
-    temp=dict()
+    clothes_d=dict(clothes)
+    clothes_num=dict()
     num=1
-    for i in d.values():
-        temp[i]=temp.get(i,0)+1
-    for n in temp.values():
+    for i in clothes_d.values():
+        clothes_num[i]=clothes_num.get(i,0)+1
+    for n in clothes_num.values():
         num*=(n+1)
     answer=num-1
     return answer

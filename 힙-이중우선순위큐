@@ -1,0 +1,33 @@
+def solution(operations):
+    answer = []
+    q=[]
+    
+    for op in operations:
+        if 'I' in op:
+            q.append(int(op[2:]))
+        elif 'D 1' in op:
+            if len(q)==0:
+                pass
+            else:
+                q.remove(max(q))
+        elif 'D -1' in op:
+            if len(q)==0:
+                pass
+            else:
+                q.remove(min(q))
+    if len(q)==0:
+        answer=[0,0]
+    else:
+        answer=[max(q),min(q)]
+            
+    return answer
+    
+정확성  테스트
+테스트 1 〉	통과 (0.03ms, 10.4MB)
+테스트 2 〉	통과 (0.02ms, 10.4MB)
+테스트 3 〉	통과 (0.04ms, 10.4MB)
+테스트 4 〉	통과 (0.01ms, 10.3MB)
+테스트 5 〉	통과 (0.02ms, 10.5MB)
+테스트 6 〉	통과 (0.02ms, 10.4MB)
+채점 결과
+정확성: 100.0

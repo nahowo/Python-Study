@@ -1,0 +1,44 @@
+def solution(citations):
+    h=0
+    n=len(citations)
+    citations=sorted(citations,reverse=True)
+    position=0
+    
+    for i in range(citations[0],0,-1):
+        if i not in citations:
+            citations.append(i)
+            citations=sorted(citations,reverse=True)
+            length=len(citations[:citations.index(i)])
+            if i<=length and i>=n-length:
+                h=i
+                break
+            citations.remove(i)
+                
+        else:
+            length=len(citations[:citations.index(i)+1])
+            if i<=length and i>=n-length:
+                h=i
+                break
+    
+    return h
+   
+  
+정확성  테스트
+테스트 1 〉	통과 (166.79ms, 10.1MB)
+테스트 2 〉	통과 (206.89ms, 10.2MB)
+테스트 3 〉	통과 (296.72ms, 10.3MB)
+테스트 4 〉	통과 (224.89ms, 10.4MB)
+테스트 5 〉	통과 (206.18ms, 10.3MB)
+테스트 6 〉	통과 (253.23ms, 10.2MB)
+테스트 7 〉	통과 (118.33ms, 10.2MB)
+테스트 8 〉	통과 (40.22ms, 10.2MB)
+테스트 9 〉	통과 (45.96ms, 10.3MB)
+테스트 10 〉	통과 (132.29ms, 10.2MB)
+테스트 11 〉	통과 (249.02ms, 10.3MB)
+테스트 12 〉	통과 (78.64ms, 10.2MB)
+테스트 13 〉	통과 (326.12ms, 10.2MB)
+테스트 14 〉	통과 (302.02ms, 10.2MB)
+테스트 15 〉	통과 (283.18ms, 10.3MB)
+테스트 16 〉	통과 (0.01ms, 10.2MB)
+채점 결과
+정확성: 100.0
